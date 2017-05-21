@@ -1,0 +1,97 @@
+Pokecraft
+
+** USER
+
+class User:
+	Name
+	Password
+	
+
+** ITEMS
+
+class Inventory:
+	Pokeballs
+	Potions
+
+class Pokeball:
+	Type (master, regular, whatever)
+
+class Potion:
+	Type (super, ultra, regular)
+	
+
+** MAP
+
+class Map:
+	Grid of 3x3 single screens
+
+class SingleScreen:
+	Grid of 8x8 squares
+	As an initial hack, we can have 64 fields: one per square, to define the landscape
+	Then we need to instantiate each NPC, etc. on that landscape
+
+
+** CHARACTER
+
+class MainCharacter:
+	Image
+	Level
+	Inventory
+	Color (clothes)
+	Experience
+
+
+** NPCs (Non-playable Characters)
+
+class BaseNPC:
+	Name
+	Image
+	Movement (pattern that it moves in?)
+	
+class TalkingNPC:
+	Conversation (talk with the character)
+	Type of NPC (Pokemon, person-enemy or friend)
+	
+class Pokemon:
+	Available moves
+	Level
+	CP
+	HP
+	
+
+** MAP FEATUREs
+
+Tree, Rock, Water, Other...
+To pass any of these features, the character needs special items
+
+
+** DISPLAY
+
+class BaseScreen:
+	includes functionality to show things on the screen
+
+class IntroScreen:
+	shows player select, etc.
+	
+class GameScreen:
+	Square for showing current SingleScreen
+	Bottom panel showing pokeballs, etc.
+
+class PauseScreen:?
+	Menu for settings, quit, etc.
+
+class BattleScreen:
+	Showing your pokemon and the other one
+	
+
+** INPUT
+
+class KeyMap:
+	Map button presses into player actions
+
+
+** INTERACTION
+
+class EngagePokemon: (battle)
+	Time battle has been going on
+	Functions for calculating damage, 
